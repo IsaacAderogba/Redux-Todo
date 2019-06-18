@@ -1,4 +1,4 @@
-# Redux & React
+# Redux & React - Isaac
 
 Topics:
 
