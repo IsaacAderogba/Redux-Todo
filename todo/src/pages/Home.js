@@ -1,7 +1,8 @@
 import React from 'react';
+import TodoList from '../components/TodoList/TodoList'
 
 const Home = () => {
-    return <div>Home</div>
+    return <div><TodoList /></div>
 }
 
 export default Home;
