@@ -10,6 +10,7 @@ const TodoItem = props => {
     <div>
       <p onClick={() => toggleTodo(id)}>{value}</p>
       <button>{`${completed}`}</button>
+      <button onClick={() => deleteTodo(id)}>X</button>
     </div>
   );
 };
