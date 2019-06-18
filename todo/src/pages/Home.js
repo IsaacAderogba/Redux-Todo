@@ -4,8 +4,9 @@ import TodoHeader from "../components/TodoHeader/TodoHeader";
 
 const Home = () => {
   return (
-    <div>
+    <div className="ui container">
       <TodoHeader />
+      <div className="ui divider"></div>
       <TodoList />
     </div>
   );

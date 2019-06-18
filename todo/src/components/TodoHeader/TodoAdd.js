@@ -18,7 +18,7 @@ const TodoAdd = props => {
   };
 
   return (
-    <form onSubmit={onSubmitForm}>
+    <form className="ui fluid input" onSubmit={onSubmitForm}>
       <input
         placeholder="Add Todo"
         term="value"
