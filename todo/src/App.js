@@ -13,7 +13,3 @@ function App() {
 }
 
 export default App;
-
-/*
-  App needs the 'todo' state
-*/

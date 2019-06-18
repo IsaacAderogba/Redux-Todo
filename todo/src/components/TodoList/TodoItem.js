@@ -1,20 +1,30 @@
 import React from "react";
 import { connect } from "react-redux";
-import { toggleTodo, deleteTodo } from "../../actions/index";
+import { toggleTodo, deleteTodo, saveTodos } from "../../actions/index";
 import './TodoList.css';
 
 const TodoItem = props => {
   const { value, completed, id } = props;
-  const { toggleTodo, deleteTodo } = props;
+  const { toggleTodo, deleteTodo, saveTodos } = props;
+
+  const onToggleTodo = () => {
+    toggleTodo(id)
+    saveTodos();
+  }
+
+  const onDeleteTodo = () => {
+    deleteTodo(id)
+    saveTodos();
+  }
 
   return (
     <div className={"ui card fluid"}>
       <div className="content">
-        <p className="description" onClick={() => toggleTodo(id)}>
+        <p className="description" onClick={onToggleTodo}>
           {value}
         </p>
       </div>
-      <button className="extra content" onClick={() => deleteTodo(id)}>
+      <button className="extra content" onClick={onDeleteTodo}>
         X {completed ? "| Task Completed" : ''}
       </button>
     </div>
@@ -23,5 +33,5 @@ const TodoItem = props => {
 
 export default connect(
   null,
-  { toggleTodo, deleteTodo }
+  { toggleTodo, deleteTodo, saveTodos }
 )(TodoItem);

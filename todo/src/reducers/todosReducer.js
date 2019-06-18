@@ -1,7 +1,13 @@
-import dummyTodos from "../constants/dummyTodos";
-import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "../actions/index";
+import todosState from "../state/todosState";
 
-export default (state = dummyTodos, action) => {
+import {
+  ADD_TODO,
+  TOGGLE_TODO,
+  DELETE_TODO,
+  SAVE_TODOS
+} from "../actions/index";
+
+export default (state = todosState, action) => {
   switch (action.type) {
     case ADD_TODO:
       return [...state, action.payload];
@@ -16,6 +22,15 @@ export default (state = dummyTodos, action) => {
         }
         return todo;
       });
+
+    case SAVE_TODOS:
+      localStorage.clear();
+      let count = 0;
+      state.forEach(todo => {
+        localStorage.setItem(count, JSON.stringify(todo));
+        count++;
+      });
+      return state;
 
     default:
       return state;
