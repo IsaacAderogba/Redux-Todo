@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import TodoItem from "./TodoItem";
-import { toggleTodo, deleteTodo } from "../../actions/index";
 
 const TodoList = props => {
   const { todos } = props;
