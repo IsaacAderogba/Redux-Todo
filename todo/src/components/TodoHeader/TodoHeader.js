@@ -1,8 +1,8 @@
 import React from 'react';
-import TodoSearch from './TodoSearch'
+import TodoAdd from './TodoAdd'
 
 const TodoHeader = () => {
-    return <div><TodoSearch /></div>
+    return <div><TodoAdd /></div>
 }
 
 export default TodoHeader;
