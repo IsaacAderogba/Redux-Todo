@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { toggleTodo, deleteTodo } from "../../actions/index";
 
 const TodoItem = props => {
-  const { value, completed } = props;
+  const { value, completed, id } = props;
   const { toggleTodo, deleteTodo } = props;
 
   return (
     <div>
-      <p>{value}</p>
+      <p onClick={() => toggleTodo(id)}>{value}</p>
       <button>{`${completed}`}</button>
     </div>
   );
