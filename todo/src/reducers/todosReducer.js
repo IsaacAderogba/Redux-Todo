@@ -9,11 +9,11 @@ export default (state = dummyTodos, action) => {
       return state.filter(todo => todo.id !== action.payload);
     case TOGGLE_TODO:
       return state.map(todo => {
-          if(todo.id === action.payload) {
-              return { ...todo, completed: !todo.completed}
-          }
-          return todo;
-      })
+        if (todo.id === action.payload) {
+          return { ...todo, completed: !todo.completed };
+        }
+        return todo;
+      });
     default:
       return state;
   }
