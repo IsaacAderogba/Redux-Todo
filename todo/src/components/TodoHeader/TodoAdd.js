@@ -1,12 +1,19 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import uuid from "uuid";
 import { addTodo } from "../../actions/index";
 
-const TodoAdd = () => {
+const TodoAdd = props => {
   const [term, setTerm] = useState("");
+  const { addTodo } = props;
 
   const onSubmitForm = event => {
     event.preventDefault();
-    console.log(term);
+    addTodo({
+      id: uuid(),
+      value: term,
+      completed: false
+    });
     setTerm("");
   };
 
@@ -21,4 +28,7 @@ const TodoAdd = () => {
   );
 };
 
-export default TodoAdd;
+export default connect(
+  null,
+  { addTodo }
+)(TodoAdd);
